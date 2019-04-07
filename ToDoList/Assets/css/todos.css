@@ -1,0 +1,97 @@
+body {
+	background: #870000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	font-family: 'Titillium Web', sans-serif;
+}
+
+#container {
+	margin: 100px auto;
+	width: 360px;
+	background-color: #edeff2;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+	background-color: #262626;
+	color: white;
+	margin: 0;
+	padding: 10px 20px;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+span {
+	background-color: #870000;
+	height: 40px;
+	width: 0px;
+	display: inline-block;
+	margin-right: 20px;
+	color: white;
+	text-align: center;
+	opacity: 0;
+	transition: 0.2s linear;
+	-webkit-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+}
+
+li:hover span{
+	width: 40px;
+	opacity: 1.0;
+	cursor: pointer;
+}
+
+li:hover{
+	cursor: pointer;
+}
+
+.fa-pencil-square {
+	float: right;
+	padding-top: 5px;
+}
+
+.fa-pencil-square:hover {
+	cursor: pointer;
+}
+
+li {
+	background-color: #fff;
+	height: 40px;
+	line-height: 40px;
+	color: #262626;
+}
+
+li:nth-child(2n){
+	background-color: #edeff2;
+}
+
+.completed {
+	color: gray;
+	text-decoration: line-through;
+}
+
+input {
+	font-size: 18px;
+	color: #262626;
+	font-family: 'Titillium Web', sans-serif;
+	background-color: #edeff2;
+	width: 100%;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 3px solid rgba(0, 0, 0, 0);
+}
+
+input:focus{
+	background-color: #fff;
+	border: 3px solid #262626;
+	outline: 0;
+}
+
