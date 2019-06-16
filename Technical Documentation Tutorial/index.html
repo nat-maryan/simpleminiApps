@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Flexbox Tutorial</title> <!-- Your title here -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		 <link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+	<body>
+		<nav id="navbar"> <!-- Navigation Bar -->
+			<header>Flexbox Tutorial</header>
+			<ul>
+			  <a class="nav-link" href="#Introduction" rel="internal"><li>Introduction</li></a>
+			  <a class="nav-link" href="#Flexbox_elements" rel="internal"><li>Flexbox Elements</li></a>
+			  <a class="nav-link" href="#Flex_Container_Properties" rel="internal"><li>Flex Container Properties</li></a>
+			  <a class="nav-link" href="#Child_Elements" rel="internal"><li>Child Elements</li></a>
+			  <a class="nav-link" href="#References" rel="internal"><li>References</li></a>
+			</ul>
+		</nav>
+		
+		<main id="main-doc"> <!-- Main Document Div Container -->
+			<section class="main-section" id="Introduction">
+			
+				<header>Introduction</header>
+				<p>A website's User Interface ("UI") has two components. First, there are the visual elements, such as colors, fonts, and images. Second, there is the placement or positioning of those elements. In Responsive Web Design, a UI layout must accommodate many different browsers and devices accessing the content.
+
+CSS3 introduced Flexible Boxes, or flexbox, to create page layouts for a dynamic UI. It is a layout mode that arranges elements in a predictable way for different screen sizes and browsers. While somewhat new, all popular modern browsers support flexbox. This section covers how to use flexbox and the different layout options it offers.</p>
+			</section>
+			
+			<section class="main-section" id="Flexbox_elements">
+			
+				<header>Flexbox Elements</header>
+				<p>To start using the Flexbox model, you need to first define a flex container.</p>
+				<code>
+					&lt;div class="flex-container"&gt; <br>
+						  &lt;div&gt;1&lt;/div&gt;<br>
+						  &lt;div&gt;2&lt;/div&gt;<br>
+						  &lt;div&gt;3&lt;/div&gt; <br>
+					&lt;/div&gt;
+				</code>
+				
+				<p>The flex container becomes flexible by setting the display property to flex:</p>
+				<code>
+					.flex-container {
+						display: flex;
+					}
+				</code>
+
+			</section>
+			
+			<section class="main-section" id="Flex_Container_Properties">
+			
+				<header>Flex Container Properties</header>
+					<h3>The flex container properties are:</h3>
+					<ul>
+						<li>flex-direction</li>
+						<li>flex-wrap</li>
+						<li>flex-flow</li>
+						<li>justify-content</li>
+						<li>align-items</li>
+						<li>align-content</li>
+					</u>
+					
+					<p>The <code>flex-direction</code> property defines in which direction the container wants to stack the flex items.</p>
+					<p>Possible values: <i>column,  column-reverse, row, row-reverse</i></p>
+					
+					<p>The <code>flex-wrap</code> property specifies whether the flex items should wrap or not.</p>
+					<p>Possible values: <i>wrap,  nowrap ,  wrap-reverse</i></p>
+					
+					<p>The <code>flex-flow</code>property is a shorthand property for setting both the flex-direction and flex-wrap properties.</p>
+					
+					
+					<p>The <code>justify-content</code> property is used to align the flex items</p>
+					<p>Possible values: <i>center ,  flex-start, flex-end, space-around, space-between</i></p>
+					
+					<p>The <code>align-items</code> property is used to align the flex items vertically.</p>
+					<p>Possible values: <i>center , flex-start, flex-end, stretch, baseline  </i></p>
+					
+					<p>The <code>align-content</code> property is used to align the flex lines.</p>
+					<p>Possible values: <i>space-between, space-around, stretch, center, flex-start, flex-end    </i></p>
+					
+					<h3>Perfect Centering</h3>
+					
+					<p><b>SOLUTION:</b> Set both the <code>justify-content</code> and <code>align-items</code> properties to <i>center</i>, and the flex item will be perfectly centered</p>
+					<code>
+						.flex-container { <br>
+						  display: flex;<br>
+						  height: 300px;<br>
+						  justify-content: center;<br>
+						  align-items: center;<br>
+						}
+					</code>
+			</section>
+			
+			<section class="main-section" id="Child_Elements">
+			
+				<header>Child Elements</header>
+				
+				<p>The direct child elements of a flex container automatically becomes flexible (flex) items.</p>
+				
+				<h3>The flex item properties are:</h3>
+					<ul>
+						<li>order</li>
+						<li>flex-grow</li>
+						<li>flex-shrink</li>
+						<li>flex-basis</li>
+						<li>flex</li>
+						<li>align-self</li>
+					</u>
+					
+					<p>The <code>order</code> property specifies the order of the flex items. The order value must be a number, default value is 0.</p>
+					<p>Example:</p>
+					<code>
+						&lt;div class="flex-container"&gt; <br>
+						  &lt;div style="order: 3"&gt;1&lt;/div&gt; <br>
+						  &lt;div style="order: 2"&gt;2&lt;/div&gt; <br>
+						  &lt;div style="order: 4"&gt;3&lt;/div&gt; <br>
+						  &lt;div style="order: 1"&gt;4&lt;/div&gt; <br>
+						&lt;/div&gt;
+					</code>
+					
+					<p>The <code>flex-grow</code> property specifies how much a flex item will grow relative to the rest of the flex items. The value must be a number, default value is 0.</p>
+				
+					
+					<p>The <code>flex-shrink</code>property specifies how much a flex item will shrink relative to the rest of the flex items. The value must be a number, default value is 1.</p>
+					
+					
+					<p>The <code>flex-basis</code>  property specifies the initial length of a flex item.</p>
+				
+					
+					<p>The <code>flex </code> property is a shorthand property for the flex-grow, flex-shrink, and flex-basis properties.</p>
+					<p>Example: <i>Make the third flex item not growable (0), not shrinkable (0), and with an initial length of 200 pixels:</i></p>
+					
+					<code>
+						&lt;div class="flex-container"&gt; <br>
+						  &lt;div&gt;1&lt;/div&gt; <br>
+						  &lt;div&gt;2&lt;/div&gt; <br>
+						  &lt;div style="flex: 0 0 200px"&gt;3&lt;/div&gt; <br>
+						  &lt;div&gt;4&lt;/div&gt; <br>
+						&lt;/div&gt; <br>
+					</code>
+					
+					<p>The <code>align-self</code> property specifies the alignment for the selected item inside the flexible container.</p>
+					<p>Possible values: <i>center , flex-start, flex-end, stretch, baseline  </i></p>
+			
+			</section>
+			
+			<section class="main-section" id="References">
+			
+				<header>References</header>
+				<p>All the documentation in this page is taken from <a href="https://www.w3schools.com/css/css3_flexbox.asp#flex-direction">w3schools.com</a></p>
+				
+				
+			</section>
+		</main>
+		
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  
+  <script src="index.js"></script>
+		
+	</body
+</html>
