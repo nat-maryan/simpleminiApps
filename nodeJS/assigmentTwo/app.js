@@ -1,16 +1,18 @@
+const path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser');
+
+const homeRoutes = require('./routes/home');
+const usersRoutes = require('./routes/users');
+
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/users', (req, res, next) => {
-    console.log('lala 1');
-    res.send('<h1>Lalalallalala</h1>')
-});
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(homeRoutes);
+app.use(usersRoutes);
 
-app.use('/', (req, res, next) => {
-    console.log('lala 2');
-    res.send('<h1>I am home</h1>')
-});
 
 app.listen(3002);
